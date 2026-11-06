@@ -1,0 +1,4 @@
+# never commit licensed/comp media or local scratch
+private-comps/
+*comp*
+.DS_Store
