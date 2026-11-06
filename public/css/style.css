@@ -1,0 +1,91 @@
+/* M.T. Papas Technology Advisory: light layout (Direction A) with deep-blue accents and a light-blue tint
+   in place of the original light green, and a navy hero over the starling video. */
+:root{
+  color-scheme:light;
+  --paper:#F4F1EA; --ink:#14201C; --blue:#1E4272; --amber:#C9822B; --tint:#DCE8F2;
+  --navy:#0F1B2D;
+  --text-soft:#33423D; --line:#D9D4C7; --on-dark:#F4F1EA; --on-dark-soft:#EDEAE0;
+  --display: Newsreader, Georgia, "Times New Roman", serif;
+  --body: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:6px;z-index:10}
+.skip:focus{left:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap--narrow{max-width:760px}
+.wrap--split{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;margin:0 0 16px}
+h1{font-size:clamp(34px,4.6vw,56px)}
+h2{font-size:clamp(30px,4vw,40px)}
+h3{font-size:24px;font-weight:600}
+p{margin:0 0 16px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:8px;background:var(--amber);color:var(--ink);font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--amber);cursor:pointer;font-family:var(--body)}
+.btn:hover{filter:brightness(1.06)}
+.btn--small{min-height:44px;padding:0 18px;font-size:15px}
+.btn--ghost{background:transparent;color:var(--on-dark);border-color:var(--on-dark)}
+
+/* Hero */
+.hero{position:relative;min-height:640px;color:var(--on-dark);overflow:hidden;
+  background:linear-gradient(180deg,#2B4361 0%,#18283F 55%,#0F1B2D 100%);display:flex;flex-direction:column}
+.hero__video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero__scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,27,45,.82) 0%,rgba(15,27,45,.55) 55%,rgba(15,27,45,.2) 100%)}
+.nav,.hero__body,.hero__toggle{position:relative}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:24px 48px}
+.brand{text-decoration:none;color:var(--on-dark);display:flex;flex-direction:column;gap:4px}
+.brand__name{font-family:var(--display);font-size:26px;font-weight:600;line-height:1}
+.brand__sub{font-size:10px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--tint)}
+.nav__links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav__links a:not(.btn){color:var(--on-dark);text-decoration:none;font-size:15px}
+.nav__links a:not(.btn):hover{text-decoration:underline}
+.hero__body{flex:1;display:flex;flex-direction:column;justify-content:center;max-width:780px;padding:32px 48px 72px}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#E7C9A0;margin-bottom:16px}
+.lede{font-size:20px;line-height:1.55;color:var(--on-dark-soft);max-width:640px;margin-bottom:28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero__toggle{align-self:flex-end;margin:0 24px 20px;background:rgba(15,27,45,.8);color:var(--on-dark);border:1px solid var(--on-dark);border-radius:6px;min-height:44px;padding:0 14px;font-size:14px;cursor:pointer;font-family:var(--body)}
+
+/* Sections */
+.section{padding:88px 0}
+.section--tint{background:var(--tint)}
+.section__intro{max-width:680px;color:var(--text-soft);margin-bottom:32px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px}
+.card__fit{font-size:15px;color:var(--blue);font-weight:600;margin:0}
+.stats{list-style:none;margin:0 0 24px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.stats li{background:var(--paper);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.stat__n{font-family:var(--display);font-size:38px;line-height:1;font-weight:600;color:var(--blue)}
+.stat__l{font-size:15px;line-height:1.45;color:var(--text-soft)}
+.note{font-size:15px;color:var(--text-soft)}
+
+/* Form */
+.form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.form label{font-weight:600;font-size:15px}
+.form input{min-height:48px;padding:0 14px;border:1.5px solid #8A978F;border-radius:8px;font-size:16px;font-family:var(--body)}
+.form__status{min-height:1.4em;margin:0;font-size:15px;color:var(--blue)}
+
+/* Footer */
+.footer{background:var(--ink);color:var(--on-dark-soft);padding:28px 0;font-size:15px}
+.footer a{color:var(--on-dark)}
+.footer__row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer p{margin:0}
+
+/* Responsive */
+@media (max-width:900px){
+  .cards,.stats{grid-template-columns:1fr 1fr}
+  .wrap--split{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .nav{padding:20px 24px}
+  .nav__links{gap:16px}
+  .hero__body{padding:24px 24px 56px}
+  .cards,.stats{grid-template-columns:1fr}
+  .section{padding:56px 0}
+}
+/* Video is skipped for reduced motion and on phones (see js/hero.js); the gradient is the fallback. */
+@media (prefers-reduced-motion: reduce){.hero__video,.hero__toggle{display:none}}
